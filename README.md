@@ -5,25 +5,62 @@ Release Date: 12th June 2024
 Submission Date: 10th July 2024 @ 23.55 hrs
 Lecturers: Jaswinder Singh, Muslim Jameel Syed
 
-# playground.ipynb
-This is a playground notebook for exploring ideas and does not form part of the final implementation
+# Description
+We are addressing the problem of updating a Multi-Class Classification system to a Chained Multi-outputs multi-label classification system.
 
-**Develop a full working example using Design Choice 1 (Chained Multi-outputs). Implement the Chained Multi-outputs approach, ensuring that the code is clean, well-documented, and functional. Use a version control system (like Git) to track your progress. Add the instructor as a collaborator to your repository.
+The idea proposed is to use the fetch_20newsgroups dataset as a stand-in replacement for a dataset of emails.
+
+The fetch_20newsgroups dataset resembles email data and has an initial set of labels annotated to it. We first mapped the individual labels into a set of super categories:
+
+```
+category_mapping = {
+    'comp.graphics': 'technology',
+    'comp.os.ms-windows.misc': 'technology',
+    'comp.sys.ibm.pc.hardware': 'technology',
+    'comp.sys.mac.hardware': 'technology',
+    'comp.windows.x': 'technology',
+    'sci.crypt': 'science',
+    'sci.electronics': 'science',
+    'sci.med': 'science',
+    'sci.space': 'science',
+    'rec.autos': 'sport',
+    'rec.motorcycles': 'sport',
+    'rec.sport.baseball': 'sport',
+    'rec.sport.hockey': 'sport',
+    'talk.politics.guns': 'politics',
+    'talk.politics.mideast': 'politics',
+    'talk.politics.misc': 'politics',
+    'alt.atheism': 'religion',
+    'soc.religion.christian': 'religion',
+    'talk.religion.misc': 'religion'
+}
+```
+In the `multi_class_classification_example.py` script, we trained a model that would map the email dataset to the super categories above. This implements the initial Multi-Class Classification system as outlined in the CA.
+
+In the `multi_label_classification.py` script, we implemented a Chained Multi-outputs multi-label classification system, which predicts and maps the data back to the original set of labels.
+
+We acknowledge that this is a circular approach, but it achieves the requirements of the CA.
+
+The next step is to reimplement/refactor this into a set of classes that define the various interfaces between different parts of the system. This will help modularize the code and make it more maintainable and scalable.
+
+# playground.ipynb
+This is a playground notebook for exploring ideas and does not form part of the final implementation.
+
+Develop a full working example using Design Choice 1 (Chained Multi-outputs). Implement the Chained Multi-outputs approach, ensuring that the code is clean, well-documented, and functional. Use a version control system (like Git) to track your progress. Add the instructor as a collaborator to your repository.
 
 # Running this code
 There are 2 steps split into to separate files:
 - multi_class_classification_example.py
 - multi_label_classification.py
 
-Step 1:
+## Step 1:
 Initialize the environment:
 `source venv/bin/activate`
 
 Install dependencies:
 `pip install -r requirements.txt`
 
-
-Step 2:
+## Step 2:
 
 run `python multi_class_classification_example.py`
 This script will output 1 file:
@@ -31,7 +68,7 @@ This script will output 1 file:
 
 This file contains the articles with the original and mapped singluar classifications
 
-Step 3:
+## Step 3:
 run `python multi_label_classification.p`
 This will output file: `chained_multi_label_predictions.csv`
 This file contains the a vector mapping on the different labels per data point in the original dataset
