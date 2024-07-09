@@ -43,7 +43,7 @@ We acknowledge that this is a circular approach, but it achieves the requirement
 
 The next step is to reimplement/refactor this into a set of classes that define the various interfaces between different parts of the system. This will help modularize the code and make it more maintainable and scalable.
 
-# playground.ipynb
+## playground.ipynb
 This is a playground notebook for exploring ideas and does not form part of the final implementation.
 
 Develop a full working example using Design Choice 1 (Chained Multi-outputs). Implement the Chained Multi-outputs approach, ensuring that the code is clean, well-documented, and functional. Use a version control system (like Git) to track your progress. Add the instructor as a collaborator to your repository.
@@ -73,6 +73,7 @@ This will output file: `chained_multi_label_predictions.csv`
 This file contains the a vector mapping on the different labels per data point in the original dataset
 
 # UML component diagram
+```
   +---------------------------+
   | Data Preparation Component|
   |---------------------------|
@@ -119,6 +120,7 @@ This file contains the a vector mapping on the different labels per data point i
   | - Predictions DataFrame   |
   | - CSV File                |
   +---------------------------+
+```
 
 # Performance
 ```
