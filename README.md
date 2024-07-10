@@ -55,7 +55,7 @@ There are 2 steps split into to separate files:
 
 ## Step 1:
 Initialize the environment:
-`source venv/bin/activate`
+`source .venv/bin/activate`
 
 Install dependencies:
 `pip install -r requirements.txt`

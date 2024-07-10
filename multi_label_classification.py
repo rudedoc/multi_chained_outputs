@@ -7,6 +7,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.multioutput import ClassifierChain
 from sklearn.metrics import classification_report, accuracy_score
+from scipy.sparse import hstack
 
 # Load the DataFrame from the CSV file
 df = pd.read_csv('mapped_newsgroups_with_original.csv')
