@@ -1,4 +1,4 @@
-# Chained Multi Outputs System for Email
+# Chained Multi Outputs System
 
 MSc/PG Diploma in Artificial Intelligence (MSCAI_JAN24, PGDAI_JAN24)
 Release Date: 12th June 2024
